@@ -1,0 +1,16 @@
+# === SERVER CONFIGURATION === *
+[server]
+nameservers = ["1.1.1.1", "1.0.0.1"] # defines the lookup nameservers
+debug = true # enable or disable debugging messages
+
+# * === SINGLE DOMAIN "LOOK AT" CONFIGURATION === *
+[[domains.single]]
+name = "mycomputer" # domain name
+ipv4 = ["127.0.0.1"] # list of IPV4s that point to the domain
+ipv6 = ["::1"] # list of IPV6s the point to the domain
+
+# * === MULTIPLE-DOMAIN "LOOK MANY" CONFIGURATION === *
+[[domains.multiple]]
+name = ["example.com", "example.local"] # multiple domain names
+ipv4 = ["0.0.0.0"] # the address "0.0.0.0" in IPV4 is reserved for blocking (other will be ignored)
+ipv6 = ["::0"] # the adress "::0" in IPV6 is reserved for blocking (other will be ignored)

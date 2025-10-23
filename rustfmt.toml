@@ -1,0 +1,49 @@
+unstable_features = false
+edition = "2024"
+
+# ident config
+tab_spaces = 2
+hard_tabs = false
+max_width = 90
+
+# errors config
+error_on_line_overflow = true
+error_on_unformatted = true
+
+# general config
+float_literal_trailing_zero = "IfNoPostfix"
+condense_wildcard_suffixes = true
+empty_item_single_line = true
+combine_control_expr = true
+force_explicit_abi = true
+binop_separator = "Front"
+newline_style = "Auto"
+
+reorder_impl_items = true
+reorder_imports = true
+reorder_modules = true
+
+imports_granularity = "Crate"
+imports_indent = "Block"
+imports_layout = "HorizontalVertical"
+group_imports = "StdExternalCrate"
+merge_imports = true
+
+match_block_trailing_comma = true
+match_arm_leading_pipes = "Never"
+match_arm_indent = true
+match_arm_blocks = true
+
+format_generated_files = true
+format_macro_matchers = true
+format_macro_bodies = true
+format_strings = true
+
+# function config
+fn_params_layout = "Tall"
+fn_args_layout = "Tall"
+fn_single_line = true
+
+# brace style config
+control_brace_style = "AlwaysSameLine"
+brace_style = "AlwaysNextLine"
