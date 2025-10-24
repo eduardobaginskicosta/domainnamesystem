@@ -59,7 +59,7 @@ ipv6 = ["::1"]
 
 # * >>> *
 
-# * === SINGLE DOMAIN CONFIGURATION === *
+# * === MULTIPLE DOMAINS CONFIGURATION === *
 # OPTIONAL. Used to configure multiple domains.
 # ( There can be multiple sections )
 [[domains.multiple]]
