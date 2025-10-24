@@ -8,6 +8,13 @@ this version improves upon the original by breaking the code into multiple
 modules, refactoring key sections, and introducing additional features such
 as **dynamic scalability** and **asynchronous processing**.
 
+[Inspiration Repository](https://github.com/EmilHernvall/dnsguide)&ensp;|&ensp;
+[LinkedIn](https://www.linkedin.com/in/eduardobaginskicosta/)&ensp;•&ensp;
+[YouTube](https://www.youtube.com/@eduardobaginskicosta)&ensp;•&ensp;
+[Instagram](https://www.instagram.com/eduardobaginskicosta/)&ensp;|&ensp;
+[GMail Contact](mailto:eduardobcosta1234@gmail.com)&ensp;•&ensp;
+[Hotmail Contact](mailto:eduardobcosta1@hotmal.com)
+
 <!-- * >>> * -->
 
 ## ✨ Features ✨
@@ -60,13 +67,13 @@ domainnamesystem/  # Root folder
 ## 📦 Compile and Run 📦
 To get started with this DNS server, follow these steps:
 
-### 1. **Clone the Repository:**
+#### ➡️ 1. **Clone the Repository:**
 ```bash
 git clone https://github.com/eduardobaginskicosta/domainnamesystem
 cd domainnamesystem
 ```
 
-### 2. Configure the Server
+#### ➡️ 2. Configure the Server
 Edit the [`server.toml`](./server.toml) file to configure the DNS server. You can
 which **nameservers** to use, the maximum number of **worker threads**, and
 other settings.
@@ -91,7 +98,7 @@ ipv4 = ["0.0.0.0"] # blocking feature (read comments)
 ipv6 = ["::0"] # blocking feature (read comments)
 ```
 
-### 3. **Build and Run the Project**
+#### ➡️ 3. **Build and Run the Project**
 The project is designed to be flexible with **two main versions** of the server:
 the **`experimental` (new)** implementation and the **`legacy` (older)** version.
 By default, the server will run with the **`experimental`** version.
@@ -105,7 +112,7 @@ To run the **`legacy` (old)** implementation:
 cargo run --release --features legacy
 ```
 
-### 4. Test The Server
+#### ➡️ 4. Test The Server
 After starting the server, you can test it using tools like `nslookup` or `dig`:
 (replace `DNS_IP` with your machine's actual address. Ex: `192.168.1.10`)
 ```bash
