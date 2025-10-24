@@ -4,6 +4,7 @@ mod dns_packet;
 mod dns_question;
 mod dns_server_config;
 mod look_at_record;
+mod worker_task;
 
 // * >>> *
 
@@ -13,3 +14,4 @@ pub use dns_packet::DnsPacket;
 pub use dns_question::DnsQuestion;
 pub use dns_server_config::DnsServerConfig;
 pub use look_at_record::LookAtRecord;
+pub use worker_task::WorkerTask;

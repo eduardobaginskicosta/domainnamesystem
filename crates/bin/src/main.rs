@@ -12,6 +12,8 @@ use toml::de::from_str as toml_parse_str;
 #[derive(Deserialize)]
 struct ServerConfig {
   nameservers: Vec<String>,
+  max_messages: usize,
+  max_workers: usize,
   debug: bool,
 }
 
@@ -43,7 +45,7 @@ struct Config {
 
 // * >>> *
 
-#[tokio::main(flavor = "multi_thread", worker_threads = 8)]
+#[tokio::main(flavor = "multi_thread", worker_threads = 10)]
 async fn main() -> Result<(), Error> {
   if !metadata("server.toml").is_ok() {
     return Err(Error::new(
@@ -64,7 +66,13 @@ async fn main() -> Result<(), Error> {
 
       // *
 
-      let mut server = DnsServer::new(nameservers, config.server.debug)?;
+      let mut server: DnsServer = DnsServer::new(
+        nameservers,
+        config.server.max_workers,
+        config.server.max_messages,
+        config.server.debug,
+      )?;
+
       if let Some(singles) = &config.domains.single {
         for domain in singles {
           server.config.look_at(

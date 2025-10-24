@@ -1,16 +1,86 @@
-# === SERVER CONFIGURATION === *
+# * === SERVER CONFIGURATION === *
+# REQUIRED. Used for server configurations.
 [server]
-nameservers = ["1.1.1.1", "1.0.0.1"] # defines the lookup nameservers
-debug = true # enable or disable debugging messages
 
-# * === SINGLE DOMAIN "LOOK AT" CONFIGURATION === *
+# Description: Define the lookup servers. These are the DNS servers your server will
+#              use to resolve queries.
+# Example: nameservers = ["1.1.1.1", "0.0.0.0"]
+nameservers = ["1.1.1.1", "1.0.0.1"]
+
+# Description: Maximum number of messages that can be queued for processing.
+# Example: max_messages = 100
+max_messages = 20
+
+# Description: Maximum number of worker threads (parallel processing) that can
+#              handle requests.
+# Example: max_workers = 20
+max_workers = 10
+
+# Description: Enable or disable debug messages. Useful for troubleshooting.
+#              | Displating characters in the console can directly affect server |
+#              | performance as resources are diverted to displaying characters. |
+#              | For better performance in production, leave it disabled.        |
+# Example: debug = false
+debug = false
+
+# * >>> *
+
+# * === DOMAINS CONFIGURATION === *
+# REQUIRED. Used for domain configurations.
+# Mus be set even if this feature is not used.
+[domains]
+
+# * >>> *
+
+# * === SINGLE DOMAIN CONFIGURATION === *
+# OPTIONAL. Used to configure a single domain.
+# ( There can be multiple sections )
 [[domains.single]]
-name = "mycomputer" # domain name
-ipv4 = ["127.0.0.1"] # list of IPV4s that point to the domain
-ipv6 = ["::1"] # list of IPV6s the point to the domain
 
-# * === MULTIPLE-DOMAIN "LOOK MANY" CONFIGURATION === *
+# Description: Defines a single domain to resolve.
+# Example: name = "mycomputer"
+name = "host.local"
+
+# Description: List of IPV4 addresses that domain will resolve to.
+# Example: ipv4 = ["127.0.0.1"]
+#
+# Tips: If the address "0.0.0.0" is set, all associated domains will be blocked due
+#       the blocking feature. If the address "0.0.0.0" is set, all others in the list
+#       will be ignored.
+ipv4 = ["127.0.0.1"]
+
+# Description: List of IPV6 addresses that domain will resolve to.
+# Example: ipv6 = ["::1"]
+#
+# Tips: If the address "::0" is set, all associated domains will be blocked due the
+#       blocking feature. If the address "::0" is set, all others in the list will
+#       be ignored.
+ipv6 = ["::1"]
+
+# * >>> *
+
+# * === SINGLE DOMAIN CONFIGURATION === *
+# OPTIONAL. Used to configure multiple domains.
+# ( There can be multiple sections )
 [[domains.multiple]]
-name = ["example.com", "example.local"] # multiple domain names
-ipv4 = ["0.0.0.0"] # the address "0.0.0.0" in IPV4 is reserved for blocking (other will be ignored)
-ipv6 = ["::0"] # the adress "::0" in IPV6 is reserved for blocking (other will be ignored)
+
+# Description: Defines multiple domains that share the same resolution (i.e., they
+#              will resolve to the seme IPs).
+# Example: name = ["example.com", "example.local"]
+name = ["example.com", "example.local"]
+
+# Description: List of IPv4 addresses for the domains.
+# Example: ipv4 = ["127.0.0.1"]
+#
+# Tips: If the address "0.0.0.0" is set, all associated domains will be blocked due
+#       the blocking feature. If the address "0.0.0.0" is set, all others in the list
+#       will be ignored.
+ipv4 = ["0.0.0.0"]
+
+# Description: List of IPv6 addresses for the domains.
+# Example: ipv6 = ["::1"]
+#
+# Tips: If the address "::0" is set, all associated domains will be blocked due the
+#       blocking feature. If the address "::0" is set, all others in the list will
+#       be ignored.
+ipv6 = ["::0"]

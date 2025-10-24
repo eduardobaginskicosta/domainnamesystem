@@ -13,8 +13,9 @@ name = "dns_core"
 path = "src/lib.rs"
 
 [features]
-default = []
+default = ["scalability"]
 legacy = []
+scalability = []
 
 [dependencies]
 local-ip-address = "0.6.5"

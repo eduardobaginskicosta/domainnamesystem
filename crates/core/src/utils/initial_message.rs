@@ -3,7 +3,12 @@ use std::net::SocketAddr;
 
 // * >>> *
 
-pub(crate) fn initial_message(bind_addr: SocketAddr, debug: bool) {
+pub(crate) fn initial_message(
+  bind_addr: SocketAddr,
+  max_workers: usize,
+  max_messages: usize,
+  debug: bool,
+) {
   println!(
     r#"
     Project: Domain Name System (DNS)
@@ -16,9 +21,17 @@ pub(crate) fn initial_message(bind_addr: SocketAddr, debug: bool) {
 
     Initializing the '{}' DNS server on the IP: {}
     DEBUG Mode: {}
+    SCALE Mode: {} (Max Workers: {} | Max Messages Queue: {})
     "#,
     legacy_code!({ "LEGACY" }, { "EXPERIMENTAL" }),
     bind_addr,
-    if debug { "Enabled" } else { "Disbaled" }
+    if debug { "Enabled" } else { "Disbaled" },
+    if cfg!(feature = "scalability") {
+      "Enabled"
+    } else {
+      "Disbaled"
+    },
+    max_workers,
+    max_messages
   );
 }

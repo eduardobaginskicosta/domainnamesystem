@@ -7,9 +7,29 @@ use std::net::{Ipv4Addr, Ipv6Addr};
 pub struct DnsServerConfig {
   pub nameservers: Vec<Ipv4Addr>,
   pub look_at: Vec<LookAtRecord>,
+
+  #[cfg(feature = "scalability")]
+  pub max_messages_count: usize,
+  #[cfg(feature = "scalability")]
+  pub max_workers_count: usize,
 }
 
 impl DnsServerConfig {
+  #[cfg(feature = "scalability")]
+  pub fn new(
+    nameservers: Vec<Ipv4Addr>,
+    max_workers: usize,
+    max_messages: usize,
+  ) -> Self {
+    Self {
+      nameservers,
+      look_at: Vec::new(),
+      max_messages_count: if max_messages > 0 { max_messages } else { 1 },
+      max_workers_count: if max_workers > 0 { max_workers } else { 1 },
+    }
+  }
+
+  #[cfg(not(feature = "scalability"))]
   pub fn new(nameservers: Vec<Ipv4Addr>) -> Self {
     Self {
       nameservers,
