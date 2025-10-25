@@ -10,6 +10,7 @@ as **dynamic scalability** and **asynchronous processing**.
 
 [Inspiration Repository](https://github.com/EmilHernvall/dnsguide)&ensp;|&ensp;
 [LinkedIn](https://www.linkedin.com/in/eduardobaginskicosta/)&ensp;•&ensp;
+[DEV Community](https://dev.to/eduardobaginskicosta)&ensp;•&ensp;
 [YouTube](https://www.youtube.com/@eduardobaginskicosta)&ensp;•&ensp;
 [Instagram](https://www.instagram.com/eduardobaginskicosta/)&ensp;|&ensp;
 [GMail Contact](mailto:eduardobcosta1234@gmail.com)&ensp;•&ensp;
