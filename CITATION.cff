@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-author:
+authors:
   - family-names: Costa
     given-names: Eduardo Baginski
 date-released: 2025-10-24
@@ -8,4 +8,4 @@ version: 0.1.0
 title: "Domain Name System"
 type: Software
 url: "https://github.com/eduardobaginskicosta/domainnamesystem"
-doi: ''
+doi: ""
