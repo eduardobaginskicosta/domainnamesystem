@@ -1,4 +1,25 @@
-# DNS Server in Rust
+[tokio_repo]: https://github.com/tokio-rs/tokio
+[server_tom]: ./server.toml
+
+<!-- * >>> * -->
+
+<h1 align="center">DNS Server in Rust</h1>
+<p align="center">
+  <a href="https://github.com/EmilHernvall/dnsguide" target="_blank">Inspiration Repository</a>
+  &emsp;-&emsp;
+  <a href="https://github.com/EmilHernvall/dnsguide" target="_blank">LinkedIn</a>
+  &ensp;
+  <a href="https://www.youtube.com/@eduardobaginskicosta" target="_blank">YouTube</a>
+  &ensp;
+  <a href="https://www.instagram.com/eduardobaginskicosta/" target="_blank">Instagram</a>
+  &emsp;-&emsp;
+  <a href="mailto:eduardobcosta1234@gmail.com" target="_blank">GMail</a>
+  &ensp;
+  <a href="mailto:eduardobcosta1@hotmal.com" target="_blank">Hotmail</a>
+  &emsp;-&emsp;
+  <b><a href="https://buymeacoffee.com/eduardobaginskicosta" target="_blank">Buy Me a Coffee</a></b>
+</p>
+
 This project implements a **DNS server in Rust** that partially follows the
 specifications outlined in **RFC 1034** and **RFC 1035**. It was inspired by
 the repository [**dnsguide**](https://github.com/EmilHernvall/dnsguide) by
@@ -8,78 +29,53 @@ this version improves upon the original by breaking the code into multiple
 modules, refactoring key sections, and introducing additional features such
 as **dynamic scalability** and **asynchronous processing**.
 
-[Inspiration Repository](https://github.com/EmilHernvall/dnsguide)&ensp;|&ensp;
-[LinkedIn](https://www.linkedin.com/in/eduardobaginskicosta/)&ensp;•&ensp;
-[DEV Community](https://dev.to/eduardobaginskicosta)&ensp;•&ensp;
-[YouTube](https://www.youtube.com/@eduardobaginskicosta)&ensp;•&ensp;
-[Instagram](https://www.instagram.com/eduardobaginskicosta/)&ensp;|&ensp;
-[GMail Contact](mailto:eduardobcosta1234@gmail.com)&ensp;•&ensp;
-[Hotmail Contact](mailto:eduardobcosta1@hotmal.com)
+| FEATURE                                 | DESCRIPTION                                                                                                                                                  |
+|-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Modular Code**                        | The original single-file implemention has been refactored into a more maintainable modular structure.                                                        |
+| **Dynamic Scalability**                 | The server supports dynamic thread scaling, allowing you to adjust the number of worker threads based on demand.                                             |
+| **Asynchronous Processing**             | Using [`tokio`][tokio_repo], the server can handle DNS queries concurrently without blocking, improving performance and scalability.                         |
+| **Flexible Configuration**              | The server’s settings (e.g., nameservers, message queue size, worker count) can be easily configured via the [`server.toml`][server_tom] configuration file. |
+| **Partial RFC 1034 & 1035 Support**     | Implements DNS resolution features as per **RFC 1034** and **RFC 1035**, allowing you to query and resolve both **IPv4** and **IPv6** addresses.             |
+| **Improved Error Handling & Debugging** | Enhanced error handling and optional debugging output to help you troubleshoot issues.                                                                       |
 
 <!-- * >>> * -->
 
-## ✨ Features ✨
-- **Modular Code:** The original single-file implemention has been refactored
-  into a more maintainable modular structure.
-- **Dynamic Scalability:** The server supports dynamic thread scaling, allowing
-  you to adjust the number of worker threads based on demand.
-- **Asynchronous Processing:** Using [`tokio`](https://github.com/tokio-rs/tokio),
-  the server can handle DNS queries concurrently without blocking, improving
-  performance and scalability.
-- **Flexible Configuration:** The server’s settings (e.g., nameservers, message
-  queue size, worker count) can be easily configured via the
-  [`server.toml`](./server.toml) configuration file.
-- **Partial RFC 1034 & 1035 Support:** Implements DNS resolution features as per
-  **RFC 1034** and **RFC 1035**, allowing you to query and resolve both **IPv4**
-  and **IPv6** addresses.
-- **Improved Error Handling & Debugging:** Enhanced error handling and optional
-  debugging output to help you troubleshoot issues.
+<br />
+<h2>Project Structure</h2>
 
-<!-- * >>> * -->
-
-## 📁 Project Structure 📁
 This project is organized into a modular structure with multiples **folders** and **crates**
 for better maintainability and flexibility.
 
-- **Root Folder:**
-  Contains the main configuration files, including the [`server.toml`](./server.toml)
-  configuration file.
-
-- **[`dns_core (crates/core)`](./crates/core):**
+- **[`dns_core (/crates/core)`](./crates/core):**
   The main library crate, internally named **`dns_core`**. This crate contains the
   **core logic** for DNS resolution, handling requests, processing queries, etc.
 
-- **[`dns (crates/bin)`](./crates/bin):**
+- **[`dns (/crates/bin)`](./crates/bin):**
   The binary crate, internally named **`dns`**. This crate contains the **entry point**
   for the server, which sets up the server and run the DNS service.
 
-### Directory Structure
-```plain
-domainnamesystem/  # Root folder
-├── crates/        # Crates folder
-│   ├── bin/       # Server binary (dns)
-│   └── core/      # Core logic for DNS resolution (dns_core)
-├── Cargo.toml     # Cargo configuration
-└── server.toml    # Configuration file
-```
+- **[`root (/)`](/):**
+  Contains the main configuration files, including the [`server.toml`][server_tom]
+  configuration file.
 
 <!-- * >>> * -->
 
-## 📦 Compile and Run 📦
+<br />
+<h2>Compile and Run</h2>
+
 To get started with this DNS server, follow these steps:
 
-#### ➡️ 1. **Clone the Repository:**
+#### ➡️ 1. **CLONE THE REPOSITORY**
 ```bash
 git clone https://github.com/eduardobaginskicosta/domainnamesystem
 cd domainnamesystem
 ```
 
-#### ➡️ 2. Configure the Server
-Edit the [`server.toml`](./server.toml) file to configure the DNS server. You can
+#### ➡️ 2. **CONFIGURE THE SERVER**
+Edit the [`server.toml`][server_tom] file to configure the DNS server. You can
 which **nameservers** to use, the maximum number of **worker threads**, and
-other settings.
+other settings. Ex:
 
-Example `server.toml`:
 ```toml
 [server]
 nameservers = ["1.1.1.1", "1.0.0.1"]
@@ -99,7 +95,7 @@ ipv4 = ["0.0.0.0"] # blocking feature (read comments)
 ipv6 = ["::0"] # blocking feature (read comments)
 ```
 
-#### ➡️ 3. **Build and Run the Project**
+#### ➡️ 3. **BUILD AND RUN THE PROJECT**
 The project is designed to be flexible with **two main versions** of the server:
 the **`experimental` (new)** implementation and the **`legacy` (older)** version.
 By default, the server will run with the **`experimental`** version.
@@ -113,7 +109,7 @@ To run the **`legacy` (old)** implementation:
 cargo run --release --features legacy
 ```
 
-#### ➡️ 4. Test The Server
+#### ➡️ 4. **TEST THE SERVER**
 After starting the server, you can test it using tools like `nslookup` or `dig`:
 (replace `DNS_IP` with your machine's actual address. Ex: `192.168.1.10`)
 ```bash
@@ -122,13 +118,15 @@ dig @DNS_IP host.local A # for macos and linux
 ```
 <!-- * >>> * -->
 
-## ⚙️ Configuration ⚙️
+<br />
+<h2>Configuration</h2>
+
 The server is configurated via the [`server.toml`](./server.toml) file. All necessary
 configuration options are defined within the file itself in the form of comments, which
 include **descriptions**, **examples** and **tips** to help you understand and just the
 settings according to your needs.
 
-### Server Configuration (`[server]`)
+#### ➡️ **SERVER CONFIGURATION - `[server]`**
 ```toml
 # REQUIRED. Used for server configurations.
 [server]
@@ -155,16 +153,17 @@ max_workers = 10
 debug = false
 ```
 
-### Domains Configuration
+#### ➡️ **DOMAINS CONFIGURATION - `[domains]`**
 ```toml
 # REQUIRED. Used for domain configurations.
 # Mus be set even if this feature is not used.
 [domains]
 ```
 
-#### ➡️ Single Domain Configuration (`[[domains.single]]`)
-Multiple `[[domains.single]]` sections can be defined in the same file to specific
-IPs for specific domain. Simply replicate the code and modify the values.
+- **SINGLE DOMAIN CONFIGURATION - `[[domains.single]]`:**
+  Multiple `[[domains.single]]` sections can be defined in the same file to specific
+  IPs for specific domain. Simply replicate the code and modify the values.
+
 ```toml
 # OPTIONAL. Used to configure a single domain.
 # ( There can be multiple sections )
@@ -191,10 +190,11 @@ ipv4 = ["127.0.0.1"]
 ipv6 = ["::1"]
 ```
 
-#### ➡️ Multiple Domains Configuration (`[[domains.multiple]]`)
-Multiple `[[domains.multiple]]` sections can be defined in the same file to specific
-IPs for specific domains. Simply replicate the code and modify the values.
-```bash
+- **MULTIPLE DOMAINS CONFIGURATIONS - `[[domains.multiple]]`:**
+  Multiple `[[domains.multiple]]` sections can be defined in the same file to specific
+  IPs for specific domains. Simply replicate the code and modify the values.
+
+```toml
 # OPTIONAL. Used to configure multiple domains.
 # ( There can be multiple sections )
 [[domains.multiple]]
@@ -223,22 +223,29 @@ ipv6 = ["::0"]
 
 <!-- * >>> * -->
 
-## 📊 Scalability and Performance 📊
-This DNS server is build with scalability in mind. It uses [`tokio`](https://github.com/tokio-rs/tokio)
+<br />
+<h2>Scalability and Performance</h2>
+
+This DNS server is build with scalability in mind. It uses [`tokio`][tokio_repo]
 for asynchronous processing, which allows the server to handle multiples DNS queries
 concurrently without blocking the main thread. The number of worker threads can be
 dynamically adjusted based on demand, ensuring optimal performance.
-
 By using a message queue system and distributing requests across multiple worker
 threads heavy traffic efficiently. The queue size and worker count are configurable
-via the [`server.toml`](./server.toml) file.
+via the [`server.toml`][server_tom] file.
 
 <!-- * >>> * -->
 
-## 🧑‍💻 Contributing 🧑‍💻
+<br />
+<h2>Contributing</h2>
+
 Feel free to contribute to this project by forking the repository, submitting pull requests,
 or reporting issues. If you'd like to add new features or improving the existing code, open
 a issue or PR, and i'd be happy to review it!
 
-## 📜 License 📜
+<!-- * >>> * -->
+
+<br />
+<h2>License</h2>
+
 This project is licensed under the MIT License - see [**LICENSE**](./LICENSE) file dor details.

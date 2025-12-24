@@ -16,6 +16,7 @@ pub(crate) fn initial_message(
     Author: Eduardo Baginski Costa <eduardobcosta1234@gmail.com>
     License: MIT License
     Repository: https://github.com/eduardobaginskicosta/domainnamesystem
+    Buy Me a Coffee (Donate): https://buymeacoffee.com/eduardobaginskicosta
 
     ( Configure the server by editing 'config.toml' )
 
