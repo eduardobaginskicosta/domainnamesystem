@@ -95,6 +95,8 @@ dig @DNS_IP host.local A # for macos and linux
 ```
 <!-- * >>> * -->
 
+<br/>
+<p align="center" aria-hidden="true">•&emsp;•&emsp;•</p>
 <h2>Configuration</h2>
 
 The server is configurated via the [`server.toml`](./server.toml) file. All necessary
