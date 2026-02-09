@@ -6,13 +6,13 @@
 <h1>Domain Name System</h1>
 <p>
   <a href="https://github.com/EmilHernvall/dnsguide" target="_blank">Original Repository</a>
-  &emsp;-&emsp;
+  &ensp;-&ensp;
   <a href="https://orcid.org/0009-0002-3089-7800">ORCID</a>
   &ensp;
   <a href="https://github.com/EmilHernvall/dnsguide" target="_blank">LinkedIn</a>
   &ensp;
   <a href="https://www.instagram.com/eduardobaginskicosta/" target="_blank">Instagram</a>
-  &emsp;-&emsp;
+  &ensp;-&ensp;
   <b><a href="https://buymeacoffee.com/eduardobaginskicosta" target="_blank"><b>Sponsor This Project</b></a></b>
 </p>
 
@@ -36,6 +36,8 @@ as **dynamic scalability** and **asynchronous processing**.
 
 <!-- * >>> * -->
 
+<br/>
+<p align="center" aria-hidden="true">• • •</p>
 <br/>
 <h2>Compile and Run</h2>
 
@@ -197,6 +199,9 @@ ipv6 = ["::0"]
 ```
 
 <!-- * >>> * -->
+
+<br/>
+<p align="center" aria-hidden="true">• • •</p>
 <br/>
 <h2>Scalability and Performance</h2>
 
