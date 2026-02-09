@@ -38,7 +38,6 @@ as **dynamic scalability** and **asynchronous processing**.
 
 <br/>
 <p align="center" aria-hidden="true">• • •</p>
-<br/>
 <h2>Compile and Run</h2>
 
 To get started with this DNS server, follow these steps:
@@ -202,7 +201,6 @@ ipv6 = ["::0"]
 
 <br/>
 <p align="center" aria-hidden="true">• • •</p>
-<br/>
 <h2>Scalability and Performance</h2>
 
 This DNS server is build with scalability in mind. It uses [`tokio`][tokio_repo]
