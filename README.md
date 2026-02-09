@@ -3,8 +3,8 @@
 
 <!-- * >>> * -->
 
-<h1 align="center">Domain Name System</h1>
-<p align="center">
+<h1>Domain Name System</h1>
+<p>
   <a href="https://github.com/EmilHernvall/dnsguide" target="_blank">Original Repository</a>
   &emsp;-&emsp;
   <a href="https://orcid.org/0009-0002-3089-7800">ORCID</a>
@@ -36,6 +36,7 @@ as **dynamic scalability** and **asynchronous processing**.
 
 <!-- * >>> * -->
 
+<br/>
 <h2>Compile and Run</h2>
 
 To get started with this DNS server, follow these steps:
@@ -196,7 +197,7 @@ ipv6 = ["::0"]
 ```
 
 <!-- * >>> * -->
-
+<br/>
 <h2>Scalability and Performance</h2>
 
 This DNS server is build with scalability in mind. It uses [`tokio`][tokio_repo]
