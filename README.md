@@ -3,21 +3,17 @@
 
 <!-- * >>> * -->
 
-<h1 align="center">DNS Server in Rust</h1>
+<h1 align="center">Domain Name System</h1>
 <p align="center">
-  <a href="https://github.com/EmilHernvall/dnsguide" target="_blank">Inspiration Repository</a>
+  <a href="https://github.com/EmilHernvall/dnsguide" target="_blank">Original Repository</a>
   &emsp;-&emsp;
-  <a href="https://github.com/EmilHernvall/dnsguide" target="_blank">LinkedIn</a>
+  <a href="https://orcid.org/0009-0002-3089-7800">ORCID</a>
   &ensp;
-  <a href="https://www.youtube.com/@eduardobaginskicosta" target="_blank">YouTube</a>
+  <a href="https://github.com/EmilHernvall/dnsguide" target="_blank">LinkedIn</a>
   &ensp;
   <a href="https://www.instagram.com/eduardobaginskicosta/" target="_blank">Instagram</a>
   &emsp;-&emsp;
-  <a href="mailto:eduardobcosta1234@gmail.com" target="_blank">GMail</a>
-  &ensp;
-  <a href="mailto:eduardobcosta1@hotmal.com" target="_blank">Hotmail</a>
-  &emsp;-&emsp;
-  <b><a href="https://buymeacoffee.com/eduardobaginskicosta" target="_blank">Buy Me a Coffee</a></b>
+  <b><a href="https://buymeacoffee.com/eduardobaginskicosta" target="_blank"><b>Sponsor This Project</b></a></b>
 </p>
 
 This project implements a **DNS server in Rust** that partially follows the
@@ -40,38 +36,17 @@ as **dynamic scalability** and **asynchronous processing**.
 
 <!-- * >>> * -->
 
-<br />
-<h2>Project Structure</h2>
-
-This project is organized into a modular structure with multiples **folders** and **crates**
-for better maintainability and flexibility.
-
-- **[`dns_core (/crates/core)`](./crates/core):**
-  The main library crate, internally named **`dns_core`**. This crate contains the
-  **core logic** for DNS resolution, handling requests, processing queries, etc.
-
-- **[`dns (/crates/bin)`](./crates/bin):**
-  The binary crate, internally named **`dns`**. This crate contains the **entry point**
-  for the server, which sets up the server and run the DNS service.
-
-- **[`root (/)`](/):**
-  Contains the main configuration files, including the [`server.toml`][server_tom]
-  configuration file.
-
-<!-- * >>> * -->
-
-<br />
 <h2>Compile and Run</h2>
 
 To get started with this DNS server, follow these steps:
 
-#### ➡️ 1. **CLONE THE REPOSITORY**
+#### 1. **CLONE THE REPOSITORY**
 ```bash
 git clone https://github.com/eduardobaginskicosta/domainnamesystem
 cd domainnamesystem
 ```
 
-#### ➡️ 2. **CONFIGURE THE SERVER**
+#### 2. **CONFIGURE THE SERVER**
 Edit the [`server.toml`][server_tom] file to configure the DNS server. You can
 which **nameservers** to use, the maximum number of **worker threads**, and
 other settings. Ex:
@@ -95,7 +70,7 @@ ipv4 = ["0.0.0.0"] # blocking feature (read comments)
 ipv6 = ["::0"] # blocking feature (read comments)
 ```
 
-#### ➡️ 3. **BUILD AND RUN THE PROJECT**
+#### 3. **BUILD AND RUN THE PROJECT**
 The project is designed to be flexible with **two main versions** of the server:
 the **`experimental` (new)** implementation and the **`legacy` (older)** version.
 By default, the server will run with the **`experimental`** version.
@@ -109,7 +84,7 @@ To run the **`legacy` (old)** implementation:
 cargo run --release --features legacy
 ```
 
-#### ➡️ 4. **TEST THE SERVER**
+#### 4. **TEST THE SERVER**
 After starting the server, you can test it using tools like `nslookup` or `dig`:
 (replace `DNS_IP` with your machine's actual address. Ex: `192.168.1.10`)
 ```bash
@@ -118,7 +93,6 @@ dig @DNS_IP host.local A # for macos and linux
 ```
 <!-- * >>> * -->
 
-<br />
 <h2>Configuration</h2>
 
 The server is configurated via the [`server.toml`](./server.toml) file. All necessary
@@ -126,7 +100,7 @@ configuration options are defined within the file itself in the form of comments
 include **descriptions**, **examples** and **tips** to help you understand and just the
 settings according to your needs.
 
-#### ➡️ **SERVER CONFIGURATION - `[server]`**
+#### **SERVER CONFIGURATION - `[server]`**
 ```toml
 # REQUIRED. Used for server configurations.
 [server]
@@ -153,7 +127,7 @@ max_workers = 10
 debug = false
 ```
 
-#### ➡️ **DOMAINS CONFIGURATION - `[domains]`**
+#### **DOMAINS CONFIGURATION - `[domains]`**
 ```toml
 # REQUIRED. Used for domain configurations.
 # Mus be set even if this feature is not used.
@@ -223,7 +197,6 @@ ipv6 = ["::0"]
 
 <!-- * >>> * -->
 
-<br />
 <h2>Scalability and Performance</h2>
 
 This DNS server is build with scalability in mind. It uses [`tokio`][tokio_repo]
@@ -236,7 +209,6 @@ via the [`server.toml`][server_tom] file.
 
 <!-- * >>> * -->
 
-<br />
 <h2>Contributing</h2>
 
 Feel free to contribute to this project by forking the repository, submitting pull requests,
@@ -245,7 +217,6 @@ a issue or PR, and i'd be happy to review it!
 
 <!-- * >>> * -->
 
-<br />
 <h2>License</h2>
 
 This project is licensed under the MIT License - see [**LICENSE**](./LICENSE) file dor details.
