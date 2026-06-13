@@ -1,10 +1,15 @@
-cff-version: 1.2.0
+ccf-version: 1.2.0
 message: "If you use this software, please cite it as below."
+
+title: "Domain Name System"
+version: "0.1.0"
+date-released: 24-10-2005
+
 authors:
   - family-names: "Baginski Costa"
     given-names: "Eduardo"
-date-released: 2025-10-24
-version: 0.1.0
-title: "Domain Name System"
-type: Software
+    orcid: "https://orcid.org/0009-0002-3089-7800"
+
+type: software
+repository-code: "https://github.com/eduardobaginskicosta/domainnamesystem"
 url: "https://github.com/eduardobaginskicosta/domainnamesystem"

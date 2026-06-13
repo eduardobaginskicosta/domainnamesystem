@@ -2,11 +2,9 @@
 name = "dns"
 version = "0.1.0"
 edition = "2024"
+homepage = "https://github.com/eduardobaginskicosta/domainnamesystem"
 license = "MIT"
 publish = false
-
-homepage = "https://github.com/eduardobaginskicosta/domainnamesystem"
-authors = ["Eduardo Baginski Costa <eduardobcosta1234@gmail.com>"]
 
 [[bin]]
 name = "dns"
