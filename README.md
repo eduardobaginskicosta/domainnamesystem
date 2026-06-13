@@ -120,17 +120,17 @@ For additional information regarding citation files on GitHub, see:
 
 ### APA Format
 ```APA
-Baginski Costa, E. (2026). DevNS (Development Name System) (Version 0.1.0) [Computer software]. https://github.com/eduardobaginskicosta/devns
+Baginski Costa, E. (2005). Domain Name System (Version 0.1.0) [Computer software]. https://github.com/eduardobaginskicosta/domainnamesystem
 ```
 
 ### BibTeX Format
 ```BibTeX
-@software{Baginski_Costa_DevNS_Development_Name_2026,
+@software{Baginski_Costa_Domain_Name_System_2005,
 author = {Baginski Costa, Eduardo},
-month = may,
-title = {{DevNS (Development Name System)}},
-url = {https://github.com/eduardobaginskicosta/devns},
+month = oct,
+title = {{Domain Name System}},
+url = {https://github.com/eduardobaginskicosta/domainnamesystem},
 version = {0.1.0},
-year = {2026}
+year = {2005}
 }
 ```
